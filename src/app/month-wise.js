@@ -10,7 +10,7 @@ export default function MonthWise() {
   const { width } = useWindowDimensions();
   
   // Responsive width for charts (container has max-w-6xl which is 1152px, minus padding)
-  const chartWidth = Math.min(width - 48, 1100); 
+  const chartWidth = Math.max(Math.min(width - 48, 1100), 200); 
 
   // MOCK DATA
   const pieData = [
@@ -64,7 +64,7 @@ export default function MonthWise() {
             <View className="items-center justify-center">
               <PieChart
                 data={pieData}
-                width={chartWidth - 48} // Account for padding
+                width={chartWidth} // Fixed width
                 height={220}
                 chartConfig={chartConfig}
                 accessor={"count"}
@@ -80,7 +80,7 @@ export default function MonthWise() {
             <Text className="text-xl font-extrabold text-[#735A52] tracking-widest uppercase mb-6">Tasks Completed Each Day</Text>
             <LineChart
               data={lineData}
-              width={chartWidth - 48}
+              width={chartWidth} // Fixed width
               height={220}
               chartConfig={chartConfig}
               bezier
@@ -96,7 +96,7 @@ export default function MonthWise() {
             <Text className="text-xl font-extrabold text-[#735A52] tracking-widest uppercase mb-6">Total Tasks Generated (Weekly)</Text>
             <BarChart
               data={barData}
-              width={chartWidth - 48}
+              width={chartWidth} // Fixed width
               height={220}
               chartConfig={chartConfig}
               style={{
