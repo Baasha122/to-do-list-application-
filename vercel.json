@@ -1,6 +1,16 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "env": {
+    "EXPO_PUBLIC_SUPABASE_URL": "https://mkqomvddcpuwkoobjgok.supabase.co",
+    "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_i8Q2l4PlCjaEbCjfX9jFqQ_-zLM96_3"
+  },
+  "build": {
+    "env": {
+      "EXPO_PUBLIC_SUPABASE_URL": "https://mkqomvddcpuwkoobjgok.supabase.co",
+      "EXPO_PUBLIC_SUPABASE_ANON_KEY": "sb_publishable_i8Q2l4PlCjaEbCjfX9jFqQ_-zLM96_3"
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
